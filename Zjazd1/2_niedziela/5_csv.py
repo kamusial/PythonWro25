@@ -28,7 +28,7 @@ print('Koniec części 2\n')
 #3. Ile kobiet jest na macierzynskim?
 total = 0
 for line in content[1:]:
-    line[4] = line[4].replace('\n','')
+    line[4] = line[4].replace('\n', '')
     if line[4].lower() == 't' and line[3].lower() == 'k':
         total += 1
 print(f'{total} kobiety na macierzynskim')
