@@ -1,5 +1,5 @@
 word = input('Wprowadz slowo: ')
-
+word = word.lower()
 no_of_reps = len(word) // 2  # część całkowita z dzielenia
 points = 0
 for i in range(no_of_reps):
@@ -10,6 +10,7 @@ for i in range(no_of_reps):
         points += 1
     else:
         print('NOK - znaki nie są takie same')
+        break    # wychodzę z petli
 if points == no_of_reps:
     print('To jest anagram')
 else:
