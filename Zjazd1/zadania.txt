@@ -1,0 +1,41 @@
+Proste zadania:
+
+Parzysta czy nieparzysta? Napisz program, który pobierze od użytkownika liczbę i sprawdzi, czy jest ona parzysta czy nieparzysta. Wyświetl odpowiedni komunikat.
+
+Suma dwóch liczb Napisz funkcję, która przyjmuje dwa argumenty liczbowe i zwraca ich sumę.
+
+Wyświetlanie liczb Napisz program, który wyświetli liczby od 1 do 10 przy użyciu pętli for.
+
+Lista imion Utwórz listę zawierającą kilka imion. Napisz program, który wypisze każde imię z listy.
+
+Suma ciągu liczb Napisz program, który pobierze od użytkownika liczbę n i obliczy sumę wszystkich liczb od 1 do n.
+
+Największa liczba w liście Napisz funkcję, która przyjmuje listę liczb i zwraca największą wartość z tej listy.
+
+Odwracanie tekstu Napisz program, który pobierze od użytkownika tekst i wypisze go od tyłu.
+
+Sprawdzanie hasła Napisz program, który będzie pytał użytkownika o hasło tak długo, aż wpisze poprawne hasło (np. "python123").
+
+Tabliczka mnożenia Napisz program, który wyświetli tabliczkę mnożenia dla liczb od 1 do 5.
+
+Sprawdzanie liczby dodatniej Napisz funkcję, która przyjmuje liczbę i zwraca True, jeśli liczba jest dodatnia, lub False, jeśli jest ujemna lub zerem.
+
+Złożone zadania:
+
+Obliczanie średniej z listy liczb Napisz program, który poprosi użytkownika o wprowadzenie ciągu liczb oddzielonych przecinkami. Zamień je na listę liczb całkowitych i oblicz ich średnią.
+
+Filtracja liczb parzystych Napisz funkcję, która przyjmuje jako argument listę liczb i zwraca nową listę zawierającą tylko liczby parzyste z oryginalnej listy.
+
+Prosty kalkulator Napisz program, który symuluje prosty kalkulator. Program powinien pobierać od użytkownika dwie liczby oraz operator (+, -, *, /) i wykonywać odpowiednią operację. Zastosuj instrukcję try-except do obsługi błędów (np. dzielenie przez zero).
+
+Sprawdzanie palindromu Napisz funkcję, która sprawdza, czy podane słowo jest palindromem (czyta się tak samo od przodu i od tyłu).
+
+Liczby pierwsze w zakresie Napisz program, który znajdzie i wypisze wszystkie liczby pierwsze w zakresie od 2 do 100.
+
+Liczby podzielne przez n Napisz funkcję, która przyjmuje dwa argumenty: listę liczb oraz liczbę n, i zwraca listę zawierającą wszystkie liczby z oryginalnej listy podzielne przez n.
+
+Licznik znaków w ciągu Napisz program, który pobiera od użytkownika ciąg znaków i tworzy słownik, w którym kluczami są znaki, a wartościami liczba ich wystąpień w ciągu.
+
+Odwracanie kolejności słów Napisz program, który pobiera od użytkownika zdanie i wypisuje każde słowo w nowej linii, ale w odwrotnej kolejności niż w oryginalnym zdaniu.
+
+Ciąg Fibonacciego Napisz funkcję, która przyjmuje liczbę n i zwraca n-ty element ciągu Fibonacciego. Użyj pętli while do implementacji.
