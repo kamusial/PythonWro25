@@ -18,18 +18,13 @@ def wait_for_it(element_id):
     znaleziono = EC.visibility_of_element_located(lokalizator)
     oczekiwator = WebDriverWait(driver, timeout)
     return oczekiwator.until(znaleziono, timeout_message)
-
-#    return WebDriverWait(driver, 5).until((By.ID, element_id), timeout_message)
-
-
-
-
-
-
+#    return WebDriverWait(driver, 5).until(EC.visibility_of_element_located(By.ID, element_id), timeout_message)
 
 
 driver = webdriver.Firefox()
 driver.get('https://www.saucedemo.com/')
+print(f'Nazwa strony: {driver.title}')
+print(f'Adres strony: {driver.current_url}')
 
 try:
     username_field = driver.find_element('id', 'user-name')
