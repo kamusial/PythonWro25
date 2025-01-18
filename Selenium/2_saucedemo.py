@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.common import NoSuchElementException
 from time import sleep
 import datetime
 def make_screenshot(okno):
@@ -11,7 +12,13 @@ def make_screenshot(okno):
 driver = webdriver.Firefox()
 driver.get('https://www.saucedemo.com/')
 
-username_field = driver.find_element('id', 'user-namea')
+try:
+    username_field = driver.find_element('id', 'user-namea')
+except NoSuchElementException:
+    print('Nie znaleziono pola')
+    driver.quit()
+    raise
+
 username_field.send_keys('standard_user')
 
 password_field = driver.find_element(By.NAME, 'password')
