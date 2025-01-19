@@ -20,14 +20,21 @@ class LoginPage:
 
     def enter_username(self, username):
         field = self.driver.find_element(By.ID, self.username_field_id)
+        field.clear()
         field.send_keys(username)
 
-    def enter_password(self):
-        pass
+    def enter_password(self, password):
+        field = self.driver.find_element(By.ID, self.password_field_id)
+        field.clear()
+        field.send_keys(password)
+
     def click_login(self):
-        pass
+        button = self.driver.find_element(By.NAME, self.login_button_name)
+        button.click()
 
 
     def close(self):
         self.driver.quit()
 
+    def get_current_url(self):
+        return self.driver.get.current_url
