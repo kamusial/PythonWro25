@@ -13,6 +13,7 @@ class LoginPage:
         self.username_field_id = 'user-name'
         self.password_field_id = 'password'
         self.login_button_name = 'login-button'
+        self.after_login_url = 'https://www.saucedemo.com/inventory.html'
 
     def print_page_info(self):
         print('Nazwa strony', self.driver.title)
@@ -37,4 +38,4 @@ class LoginPage:
         self.driver.quit()
 
     def get_current_url(self):
-        return self.driver.get.current_url
+        return self.driver.current_url
