@@ -1,4 +1,4 @@
-#    a ge : age in years
+#    age : age in years
 #    sex: (1 = male; 0 = female)
 #    cp : chest pain type
 #    trestbps : resting blood pressure (in mm Hg on admission to the hospital)
