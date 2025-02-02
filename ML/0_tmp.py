@@ -1,11 +1,13 @@
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-from sklearn.linear_model import LinearRegression
-from sklearn.model_selection import train_test_split
+import inspect
 
-df = pd.read_csv('dane\\otodom.csv')
+def example_func(a, b, c=10, *args, **kwargs):
+    pass
 
-print(df.iloc[  3:16  ,  2:5  ])
+params = inspect.signature(example_func).parameters
+print(params)
 
-print(df.loc[:, 'liczba_pieter'])
+
+def example_func(a, b, c=10, *args, **kwargs):
+    print(locals())  # Wyświetla słownik z wszystkimi argumentami i ich wartościami
+
+example_func(1, 2, 3, 4, 5, key="value")
