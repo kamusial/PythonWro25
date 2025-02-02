@@ -29,6 +29,36 @@ print('Po czyszczeniu danych')
 print(df.describe().T.to_string())
 print(df.isna().sum())
 
+df.to_csv('dane\\cukrzyca_po_obrobce.csv', sep=';', index=False)
+
+
+X = df.iloc[:, :-1]   #wszystkie kolumny, bez ostatniej
+y = df.outcome
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.2)
+
+print('\nLogistic Regression')
+model = LogisticRegression()
+model.fit(X_train, y_train)
+print(model.score(X_test, y_test))
+print(pd.DataFrame(confusion_matrix(y_test, model.predict(X_test))))
+
+print(f'Zdrowych, ile chorych: {df.outcome.value_counts()}')
+print('Zmiana danych')
+# 500 zdrowych, 500 chorych
+
+df1 = df.query("outcome==0").sample(n=500)
+df2 = df.query(" outcome==1 ").sample(n=500)
+df3 = pd.concat([df1, df2])
+
+
+X = df3.iloc[:, :-1]   #wszystkie kolumny, bez ostatniej
+y = df3.outcome
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.2)
+
+model = LogisticRegression()
+model.fit(X_train, y_train)
+print(model.score(X_test, y_test))
+print(pd.DataFrame(confusion_matrix(y_test, model.predict(X_test))))
 
 
 # def myfun(kolor: str, dzien: int, tydzien) -> str:

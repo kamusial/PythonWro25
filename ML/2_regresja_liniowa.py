@@ -13,6 +13,9 @@ print(f'wykres korelacji kolumn')
 sns.heatmap(df.iloc[:, 2:].corr(), annot=True)  # wycinay pierwszą kolumne (o indeksie 0)
 plt.show()
 
+
+
+
 sns.histplot(df.cena)
 plt.show()
 
