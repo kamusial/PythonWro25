@@ -14,8 +14,9 @@ buttonframe = tk.Frame(root)
 buttonframe.columnconfigure(0, weight=1)
 buttonframe.columnconfigure(1, weight=3)
 buttonframe.columnconfigure(2, weight=1)
-# buttonframe.rowconfigure(0, weight=3)
+# buttonframe.rowconfigure(0, weight=2)
 # buttonframe.rowconfigure(1, weight=1)
+# buttonframe.rowconfigure(2, weight=4)
 
 btn1 = tk.Button(buttonframe, text='1', font=('Arial', 15))
 btn1.grid(row=0, column=0, sticky=tk.W+tk.E, pady=10, padx=10)
@@ -29,11 +30,14 @@ btn5 = tk.Button(buttonframe, text='5', font=('Arial', 15))
 btn5.grid(row=1, column=1, sticky=tk.W+tk.E, pady=10, padx=10)
 btn6 = tk.Button(buttonframe, text='6', font=('Arial', 15))
 btn6.grid(row=1, column=2, sticky=tk.W+tk.E, pady=10, padx=10)
+quit_btn1 = tk.Button(buttonframe, text='Wyjdz', command=root.quit, bg='blue',font=('Arial', 20))
+quit_btn1.grid(row=2, column=1, sticky=tk.W+tk.E, pady=10, padx=10, ipadx=20, ipady=20)
+
 
 buttonframe.pack(fill='x')
 
-quit_btn = tk.Button(root, text='Wyjdz', command=root.quit, bg='red')
-quit_btn.
+quit_btn2 = tk.Button(root, text='Wyjdz', command=root.quit, bg='red')
+quit_btn2.place(x=200, y=450, height=100, width=100)
 
 
 
