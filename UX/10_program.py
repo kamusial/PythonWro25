@@ -9,8 +9,7 @@ def button1_clicked():
     if label_info['text'] == 'pusta':
         label_info.config(text='')
     label_info.config(text=btn1['text'])
-
-#    label_info.config(text='Nowy')
+    # nie dodaje cyfr
 
 label = tk.Label(root, text='Kalkulator', font=('Arial', 20),
                 background='#265ECE', fg='red')
