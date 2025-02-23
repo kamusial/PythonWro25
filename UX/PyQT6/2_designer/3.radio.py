@@ -7,9 +7,10 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6.QtWidgets import QDialog
 
 
-class Ui_Form(object):
+class Ui_Form(QDialog):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(480, 336)
@@ -28,12 +29,15 @@ class Ui_Form(object):
         self.verticalLayout.setObjectName("verticalLayout")
         self.radioButton = QtWidgets.QRadioButton(parent=Form)
         self.radioButton.setObjectName("radioButton")
+        self.radioButton.toggled.connect(self.radio_selected)
         self.verticalLayout.addWidget(self.radioButton)
         self.radioButton_2 = QtWidgets.QRadioButton(parent=Form)
         self.radioButton_2.setObjectName("radioButton_2")
+        self.radioButton_2.toggled.connect(self.radio_selected)
         self.verticalLayout.addWidget(self.radioButton_2)
         self.radioButton_3 = QtWidgets.QRadioButton(parent=Form)
         self.radioButton_3.setObjectName("radioButton_3")
+        self.radioButton_3.toggled.connect(self.radio_selected)
         self.verticalLayout.addWidget(self.radioButton_3)
         self.verticalLayout_2.addLayout(self.verticalLayout)
         self.label_2 = QtWidgets.QLabel(parent=Form)
@@ -57,6 +61,12 @@ class Ui_Form(object):
         self.radioButton_2.setText(_translate("Form", "Standard     300E"))
         self.radioButton_3.setText(_translate("Form", "Eco    100E"))
         self.label_2.setText(_translate("Form", "TextLabel"))
+
+
+    def radio_selected(self):
+        radio_btn = self.sender()
+        if radio_btn.isChecked():
+            self.label_2.setText('Wybrales: {} '.format(radio_btn.text()))
 
 
 if __name__ == "__main__":
