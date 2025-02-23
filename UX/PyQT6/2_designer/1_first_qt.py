@@ -71,7 +71,11 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.pushButton.setText(_translate("MainWindow", "Kliknij"))
         self.label.setText(_translate("MainWindow", "TextLabel"))
+        self.pushButton.clicked.connect(self.button_click)
 
+    def button_click(self):
+        mytext = self.lineEdit.text()
+        self.label.setText('Witaj'+ mytext)
 
 if __name__ == "__main__":
     import sys
