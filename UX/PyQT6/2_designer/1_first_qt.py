@@ -7,7 +7,7 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-
+from PyQt6.QtGui import QFont
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -49,7 +49,7 @@ class Ui_MainWindow(object):
         font.setBold(False)
         font.setItalic(False)
         self.label.setFont(font)
-        self.label.setStyleSheet("font: 8pt \"Segoe MDL2 Assets\";\n"
+        self.label.setStyleSheet("font: 820pt \"Segoe MDL2 Assets\";\n"
 "background-color: rgb(255, 170, 127);\n"
 "color: rgb(255, 0, 255);")
         self.label.setObjectName("label")
@@ -75,7 +75,9 @@ class Ui_MainWindow(object):
 
     def button_click(self):
         mytext = self.lineEdit.text()
-        self.label.setText('Witaj'+ mytext)
+        self.label.setText('Witaj '+ mytext)
+        self.label.setFont(QFont('Times', 20))
+        self.label.setStyleSheet('color:red')
 
 if __name__ == "__main__":
     import sys
