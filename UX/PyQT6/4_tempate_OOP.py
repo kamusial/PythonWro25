@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QApplication, QDialog, QMainWindow, QWidget
+from PyQt6.QtWidgets import QApplication, QDialog, QMainWindow, QWidget, QPushButton
 import sys
 
 class MainWindow(QMainWindow):
