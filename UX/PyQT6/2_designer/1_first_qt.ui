@@ -26,7 +26,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>70</x>
@@ -43,8 +43,16 @@
          <property name="font">
           <font>
            <family>Segoe Print</family>
-           <pointsize>12</pointsize>
+           <pointsize>13</pointsize>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: red; /* Tło przycisku */
+    color: white; /* Kolor tekstu */
+    border-radius: 10px; /* Zaokrąglenie rogów */
+    padding: 5px; /* Odstęp wewnętrzny */
+}</string>
          </property>
          <property name="text">
           <string>Kliknij</string>
@@ -60,8 +68,16 @@
       <widget class="QLabel" name="label">
        <property name="font">
         <font>
-         <bold>true</bold>
+         <family>Segoe MDL2 Assets</family>
+         <pointsize>8</pointsize>
+         <italic>false</italic>
+         <bold>false</bold>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 8pt &quot;Segoe MDL2 Assets&quot;;
+background-color: rgb(255, 170, 127);
+color: rgb(255, 0, 255);</string>
        </property>
        <property name="text">
         <string>TextLabel</string>
