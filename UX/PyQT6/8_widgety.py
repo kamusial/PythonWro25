@@ -28,8 +28,8 @@ class MainWindow(QMainWindow):
         super().__init__()
 
         self.setWindowTitle('Moje widgety')
-        layout = QVBoxLayout()
-    #    layout = QHBoxLayout()
+        layout = QVBoxLayout()   # pionowy układ
+    #    layout = QHBoxLayout()  # poziomy układ
         widgets = [
             QCheckBox,
             QComboBox,
@@ -48,3 +48,16 @@ class MainWindow(QMainWindow):
             QSpinBox,
             QTimeEdit,
         ]
+
+        for w in widgets:
+            layout.addWidget(w())   # dodaj widgety do layoutu
+
+        widget = QWidget()
+        widget.setLayout(layout)
+        self.setCentralWidget(widget)
+
+app = QApplication(sys.argv)
+window = MainWindow()
+window.show()
+app.exec()
+
