@@ -62,3 +62,17 @@ pozaNFZ = chorzy_rok.union(chorzy_miesiac.union(krzyki.union(centrum))).differen
 if len(pozaNFZ) != 0:
     print(pozaNFZ)
     NFZ = NFZ.union(pozaNFZ)
+
+# każdy: chory, zdrowy, z centeum i z krzyków, powinien być w bazie NFZ. Jeśli nie ma, trzeba dopisać)
+wszyscy = chorzy_rok | chorzy_miesiac | centrum | krzyki
+NFZ |= wszyscy
+print(len(NFZ))
+
+# pesele żeńskie mają ostatnią cyfrę parzystą, męskie – nieparzystą.
+# zróbmy nowe zbiory, osobne dla mężczyzn i kobiet
+NFZ_men = set()
+NFZ_women = set()
+for pesel in NFZ:
+    if pesel % 2 == 0:
+        NFZ_women.add(pesel)
+NFZ_men = NFZ - NFZ_women
