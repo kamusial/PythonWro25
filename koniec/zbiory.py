@@ -36,18 +36,29 @@ print(f'Ilosc {len(chorzy_miesiac - chorzy_rok)}')
 if len(chorzy_miesiac - chorzy_rok) == 0:
     print('ok')
 
-# nikt nie powinien mieszkać jendocześnie
-# w centrum i na krzykach – jeśli tak, trzeba usunąć
-duplikaty = krzyki & centrum
-if len(duplikaty) != 0:
-    print('\nznaleziono duplikaty - usuwam')
-    krzyki = krzyki - duplikaty
-if len(krzyki & centrum) == 0:
-    print('ok, brak duplikatow')
+# nikt nie powinien mieszkać jendocześnie w centrum i na krzykach
+# – jeśli tak, trzeba usunąć
+# zbior.remove(element)
 
-# każdy: chory, zdrowy, z krzyków i z centrum,
-# powinien być w bazie NFZ. Jeśli nie ma, trzeba dopisać
+if len(krzyki.intersection(centrum)) != 0:
+    x = input('Usinąć z centrum (C), czy z krzyków (K)? ')
+    duplikaty = krzyki.intersection(centrum)
+    if x.lower() == 'k':
+        krzyki = krzyki.difference(duplikaty)
+    elif x.lower() == 'c':
+        for pesel in duplikaty:
+            centrum.remove(pesel)
+    else:
+        print('zly wybor')
+    print('Sprawdzam duplikaty: ',krzyki.intersection(centrum))
 
-# pesele żeńskie mają ostatnią cyfrę parzystą, męskie – nieparzystą.
+# każdy: chory, zdrowy, z krzyków i z centrum, powinien być w bazie NFZ.
+# Jeśli nie ma, trzeba dopisać
 
-# wypiszmy mężczyzn z centrum, którzy NIE byli chorzy w ostatnim roku
+# lista = [1, 2, 3, 3, 3, 4, 4, 4, 5]
+# lista = list(set(lista))
+# print(lista)
+pozaNFZ = chorzy_rok.union(chorzy_miesiac.union(krzyki.union(centrum))).difference(NFZ)
+if len(pozaNFZ) != 0:
+    print(pozaNFZ)
+    NFZ = NFZ.union(pozaNFZ)
